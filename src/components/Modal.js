@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Modal = ({toggleModal, details}) => {
-    console.log(details);
+    // console.log(details);
   return (
     <div className='modal'>
         <article><img load="lazy" src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${details.pid}.svg`} alt={details.name} />

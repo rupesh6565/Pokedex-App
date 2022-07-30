@@ -43,7 +43,6 @@ function App() {
   
   return (
     <>
-      {/* <Header/> */}
       {openModal.status && <Modal toggleModal={toggleModal} details={openModal.details}/>}
      {pokemon.length && <PokemonList setDetails={setOpenModal} pokemon={pokemon} />}
       <Pagination
