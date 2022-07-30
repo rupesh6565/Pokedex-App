@@ -25,3 +25,45 @@
     height: 20rem;
     box-shadow: 0 0 0 16px rgba(0,0,0,0.5);
 }
+
+.relative{
+    position: relative;
+}
+.flex{
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
+
+.bold{
+    font-weight: 700;
+}
+.clear-search{
+    margin-left:10px;
+    left:82%;
+    transition: transform 0.3s ease;
+}
+.clear-search:hover{
+transform: scale(1.2);
+}
+
+.absolute{
+    position: absolute;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+input[type="text"]{
+    padding: 10px 1.2rem;
+    margin:1rem;
+    border-radius: 10px;
+    border: 5px solid transparent;
+    width:80%;
+    outline: none;
+}
+input[type="text"]:focus{
+    border: 5px solid var(--secondary-color);
+}

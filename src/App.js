@@ -4,6 +4,7 @@ import axios from 'axios'
 import Pagination from './components/Pagination';
 import { Modal } from './components/Modal';
 import "./App.css";
+import { Header } from './components/Header';
 
 function App() {
   const [openModal, setOpenModal] = useState({status:false,details:{}})
@@ -12,6 +13,8 @@ function App() {
   const [nextPageUrl, setNextPageUrl] = useState()
   const [prevPageUrl, setPrevPageUrl] = useState()
   const [loading, setLoading] = useState(true)
+
+  const [searchQuery, setSearchQuery]= useState('')
 
   useEffect(() => {
     setLoading(true)
@@ -30,10 +33,12 @@ function App() {
 
   function gotoNextPage() {
     setCurrentPageUrl(nextPageUrl)
+    setSearchQuery('')
   }
 
   function gotoPrevPage() {
     setCurrentPageUrl(prevPageUrl)
+    setSearchQuery('')
   }
   function toggleModal(){
     setOpenModal(prev=>({...prev, status:!prev.status}))
@@ -43,9 +48,10 @@ function App() {
   
   return (
     <>
+    <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       {openModal.status && <Modal toggleModal={toggleModal} details={openModal.details}/>}
-     {pokemon.length && <PokemonList setDetails={setOpenModal} pokemon={pokemon} />}
-      <Pagination
+     {pokemon.length && <PokemonList searchQuery={searchQuery} setDetails={setOpenModal} pokemon={pokemon} />}
+      <Pagination 
         gotoNextPage={nextPageUrl ? gotoNextPage : null}
         gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
       />
