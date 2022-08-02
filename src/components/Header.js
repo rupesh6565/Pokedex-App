@@ -7,6 +7,7 @@ function Header({searchQuery, setSearchQuery}) {
   return (
     <section className="relative flex align-center ">
       <input
+        className='search'
         placeholder="Search Pokemon..."
         type="text"
         value={searchQuery}

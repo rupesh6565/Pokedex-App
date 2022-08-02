@@ -21,7 +21,7 @@ export const PokemonCard = ({pokemon, setDetails}) => {
         <img load="lazy" src={`https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/${pokemonDetails.pid}.svg`} alt={pokemon.name} />
         <h1>{pokemon.name}</h1>
         
-        <button onClick={openDetail} >Know More</button>
+        <button className='knowmore' onClick={openDetail} >Know More</button>
     </article>
   )
 }
